@@ -15,6 +15,15 @@ enum Resources {
             static var inactive = UIColor(hexString: "#929DA5")
             static var separator = UIColor(hexString: "#E8ECEF")
         }
+        enum NavBarColors {
+            static var titleGray = UIColor(hexString: "#545C77")
+            static var separatorNav = UIColor(hexString: "#E8ECEF")
+        }
+        enum BaseController {
+            static var baseBackgroundColor = UIColor(hexString: "#F8F9F9")
+            static var navBarButtonColorActiv = UIColor(hexString: "#437BFE")
+            static var navBarButtonColorInactive = UIColor(hexString: "#929DA5")
+        }
     }
     
     enum Strings {
@@ -26,6 +35,13 @@ enum Resources {
         }
 
     }
+
+    enum Fonts {
+            //используем функцию что бы мы могли задавать размер в другом месте
+            static func helveticaRegular (with size: CGFloat) -> UIFont {
+                UIFont(name: "Helvetica", size: size) ?? UIFont()
+            }
+        }
 
     enum Image {
         enum TabBarImage {
