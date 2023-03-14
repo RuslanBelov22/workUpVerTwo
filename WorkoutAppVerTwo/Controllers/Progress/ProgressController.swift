@@ -16,8 +16,8 @@ class ProgressViewController: BaseController {
         //если не использовать данную контрукцию название в tabBar так же будет изменяться на то что выше
         navigationController?.tabBarItem.title = Resources.Strings.TabBarStrings.progress
 
-        addNavBarButton(at: .left, with: "Export")
-        addNavBarButton(at: .right, with: "Details")
+        addNavBarButton(at: .left, with: Resources.Strings.Progress.navBarLeft)
+        addNavBarButton(at: .right, with: Resources.Strings.Progress.navBarRight)
     }
 
 

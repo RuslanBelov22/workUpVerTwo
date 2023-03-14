@@ -18,6 +18,7 @@ enum Resources {
         enum NavBarColors {
             static var titleGray = UIColor(hexString: "#545C77")
             static var separatorNav = UIColor(hexString: "#E8ECEF")
+            static var secondary = UIColor(hexString: "#F0F3FF")
         }
         enum BaseController {
             static var baseBackgroundColor = UIColor(hexString: "#F8F9F9")
@@ -32,6 +33,18 @@ enum Resources {
             static var session = "Session"
             static var progress = "Progress"
             static var settings = "Settings"
+        }
+        enum Session {
+            static var navBarLeft = "Pause"
+            static var navBarRight = "Finish"
+        }
+        enum Progress {
+            static var navBarLeft = "Export"
+            static var navBarRight = "Details"
+        }
+
+        enum OverView {
+            static var allWorkoutsButton = "All Workouts"
         }
 
     }
@@ -49,6 +62,9 @@ enum Resources {
             static var session = UIImage(named: "Session_tab")
             static var progress = UIImage(named: "Progress_tab")
             static var settings = UIImage(named: "Settings_tab")
+        }
+        enum Common {
+            static var downArrow = UIImage(named: "down_arrow")
         }
     }
 }

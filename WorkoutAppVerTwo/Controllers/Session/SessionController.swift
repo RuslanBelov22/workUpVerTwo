@@ -17,12 +17,12 @@ class SessionViewController: BaseController {
         navigationController?.tabBarItem.title = Resources.Strings.TabBarStrings.session
 
         //Добавляем кнопки на navBar
-        addNavBarButton(at: .left, with: "Pause")
-        addNavBarButton(at: .right, with: "Finish")
+        addNavBarButton(at: .left, with: Resources.Strings.Session.navBarLeft)
+        addNavBarButton(at: .right, with: Resources.Strings.Session.navBarRight)
     }
 
     override func navBarLeftButtonHandler() { //как раз @objc позволяет нам переопределять функцию в других классах
-        print("Session NavBar left button tapped")
+        print("Session NavBar left button tapped") //Смысловой нагрузки эта функция не несет просто для демонстрации 
     }
 
 }

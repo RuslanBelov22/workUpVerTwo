@@ -21,6 +21,7 @@
 		4451F49629B261F100C189F3 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F49529B261F100C189F3 /* SessionController.swift */; };
 		4451F49829B2622D00C189F3 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F49729B2622D00C189F3 /* ProgressController.swift */; };
 		4451F49A29B2626C00C189F3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F49929B2626C00C189F3 /* SettingsController.swift */; };
+		44BA1A0329BCC18800021B2C /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA1A0229BCC18800021B2C /* SecondaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		4451F49529B261F100C189F3 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 		4451F49729B2622D00C189F3 /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		4451F49929B2626C00C189F3 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		44BA1A0229BCC18800021B2C /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		4451F49129B2619B00C189F3 /* OverView */ = {
 			isa = PBXGroup;
 			children = (
+				44BA1A0129BCC15300021B2C /* VIews */,
 				4451F46D29A90A4800C189F3 /* OverViewController.swift */,
 			);
 			path = OverView;
@@ -169,6 +172,14 @@
 				4451F49929B2626C00C189F3 /* SettingsController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		44BA1A0129BCC15300021B2C /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				44BA1A0229BCC18800021B2C /* SecondaryButton.swift */,
+			);
+			path = VIews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +258,7 @@
 				4451F46A29A90A4800C189F3 /* AppDelegate.swift in Sources */,
 				4451F48A29B0F99600C189F3 /* NavBarController.swift in Sources */,
 				4451F49829B2622D00C189F3 /* ProgressController.swift in Sources */,
+				44BA1A0329BCC18800021B2C /* SecondaryButton.swift in Sources */,
 				4451F48829ACFD1000C189F3 /* Resources.swift in Sources */,
 				4451F46C29A90A4800C189F3 /* SceneDelegate.swift in Sources */,
 				4451F49A29B2626C00C189F3 /* SettingsController.swift in Sources */,
