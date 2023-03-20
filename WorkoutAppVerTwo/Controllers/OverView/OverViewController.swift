@@ -9,7 +9,7 @@ import UIKit
 
 class OverViewController: BaseController {
 
-    private let allWorkoutsButtom = SecondaryButton()
+    private let navBAr = OverviewNavBar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,32 +28,28 @@ extension OverViewController {
     override func addViews() {
         super.addViews()
 
-        view.addSubview(allWorkoutsButtom)
+        navigationController?.setNavigationBarHidden(true, animated: false)// функция скрывает navBar 
+        view.addView(navBAr)
 
     }
     override func layoutViews() {
         super.layoutViews()
 
         NSLayoutConstraint.activate([
-            allWorkoutsButtom.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            allWorkoutsButtom.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            allWorkoutsButtom.heightAnchor.constraint(equalToConstant: 28),
-            allWorkoutsButtom.widthAnchor.constraint(equalToConstant: 130)
+
+            //растановка констрейнов для navBar
+            navBAr.topAnchor.constraint(equalTo: view.topAnchor),
+            navBAr.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            navBAr.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            //установка высоты navbar при этом сейчас она нам не нужна так как высота будет задаваться содержащимся в ней контентом
+//            navBAr.heightAnchor.constraint(equalToConstant: 113),
         ])
 
     }
     override func configure() {
         super.configure()
-        allWorkoutsButtom.translatesAutoresizingMaskIntoConstraints = false
-        allWorkoutsButtom.setTitle(Resources.Strings.OverView.allWorkoutsButton)
-        allWorkoutsButtom.addTarget(self,
-                                    action: #selector(allWorkoutsButtonAction),
-                                    for: .touchUpInside)
+
+//        navBAr.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
-@objc extension OverViewController {
-    func allWorkoutsButtonAction() {
-        print("All Workouts Button tapped")
-    }
-}

@@ -33,8 +33,8 @@ final class SecondaryButton: UIButton {
 
 private extension SecondaryButton {
     func addViews() {
-        addSubview(label)
-        addSubview(iconView)
+        addView(label)
+        addView(iconView)
     }
     func layoutViews() {
         //установка констрейнов
@@ -55,12 +55,12 @@ private extension SecondaryButton {
         layer.cornerRadius = 14
         makeSystem(self) // добавляет нашу анимацию из расширения UIView + ext
         
-        label.translatesAutoresizingMaskIntoConstraints = false //обязательный элемент для настраиваемых констрейнов
+//        label.translatesAutoresizingMaskIntoConstraints = false //обязательный элемент для настраиваемых констрейнов
         label.textColor = Resources.Colors.TabBarColors.active
         label.textAlignment = .center
         label.font = Resources.Fonts.helveticaRegular(with: 15)
 
-        iconView.translatesAutoresizingMaskIntoConstraints = false
+//        iconView.translatesAutoresizingMaskIntoConstraints = false
         iconView.image = Resources.Image.Common.downArrow?.withRenderingMode(.alwaysTemplate)
         //withRenderingMode(.alwaysTemplate) с помощью RenderingMode мы можем изменять цвета ц
         iconView.tintColor = Resources.Colors.TabBarColors.active

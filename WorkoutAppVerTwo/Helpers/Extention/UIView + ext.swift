@@ -42,5 +42,10 @@ extension UIView { //добавление сепаратора во вью
     @objc func handleOut() {
         UIView.animate(withDuration: 0.15) {self.alpha = 1}
     }
+    //функция для автоматической расстановки view
+    func addView(_ view: UIView) {
+        addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+    }
 }
 
