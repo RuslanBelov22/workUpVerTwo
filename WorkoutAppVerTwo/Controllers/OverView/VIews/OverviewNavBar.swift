@@ -12,14 +12,7 @@ final class OverviewNavBar: BaseView {
     private let titleLabel = UILabel()
     private let allWorkoutsButton = SecondaryButton()
     private let addButton = UIButton()
-
-
-    private var weekView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .blue.withAlphaComponent(0.2)
-
-        return view
-    }()
+    private var weekView = WeekView()
 
     //это нужна для того что бы view загрузил frame и мы могли установить border
     override func layoutSubviews() {
@@ -74,8 +67,8 @@ extension OverviewNavBar {
 
     }
 
-    override func configure() {
-        super.configure()
+    override func configureVews() {
+        super.configureVews()
         backgroundColor = .white
 
         //теперь везде можно убрать translatesAutoresizingMaskIntoConstraints так как эта функция есть а расширении UIview

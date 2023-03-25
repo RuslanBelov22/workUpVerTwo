@@ -13,7 +13,7 @@ class BaseView: UIView {
 
         addViews()
         layoutViews()
-        configure()
+        configureVews()
 
     }
 
@@ -25,6 +25,6 @@ class BaseView: UIView {
     @objc extension BaseView {
         func addViews() {}
         func layoutViews() {}
-        func configure() {}
+        func configureVews() {}
     }
 
