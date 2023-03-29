@@ -13,27 +13,25 @@ class OverViewController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addViews()
-        layoutViews()
-        configure()
-//        title = "OverView"
-//        //описание в ProgressController
-//        navigationController?.tabBarItem.title = Resources.Strings.TabBarStrings.overview
+        setupViews()
+        constrainViews()
+        configureAppearance()
+
     }
 
 
 }
 
 extension OverViewController {
-    override func addViews() {
-        super.addViews()
+    override func setupViews() {
+        super.setupViews()
 
         navigationController?.setNavigationBarHidden(true, animated: false)// функция скрывает navBar 
-        view.addView(navBAr)
+        view.setupView(navBAr)
 
     }
-    override func layoutViews() {
-        super.layoutViews()
+    override func constrainViews() {
+        super.constrainViews()
 
         NSLayoutConstraint.activate([
 
@@ -46,8 +44,8 @@ extension OverViewController {
         ])
 
     }
-    override func configure() {
-        super.configure()
+    override func configureAppearance() {
+        super.configureAppearance()
 
 //        navBAr.translatesAutoresizingMaskIntoConstraints = false
     }

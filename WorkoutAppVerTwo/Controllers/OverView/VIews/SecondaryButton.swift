@@ -33,8 +33,8 @@ final class SecondaryButton: UIButton {
 
 private extension SecondaryButton {
     func addViews() {
-        addView(label)
-        addView(iconView)
+        setupView(label)
+        setupView(iconView)
     }
     func layoutViews() {
         //установка констрейнов
@@ -51,18 +51,18 @@ private extension SecondaryButton {
         ])
     }
     func configure() {
-        backgroundColor = Resources.Colors.NavBarColors.secondary
+        backgroundColor = R.Colors.NavBarColors.secondary
         layer.cornerRadius = 14
         makeSystem(self) // добавляет нашу анимацию из расширения UIView + ext
         
 //        label.translatesAutoresizingMaskIntoConstraints = false //обязательный элемент для настраиваемых констрейнов
-        label.textColor = Resources.Colors.TabBarColors.active
+        label.textColor = R.Colors.TabBarColors.active
         label.textAlignment = .center
-        label.font = Resources.Fonts.helveticaRegular(with: 15)
+        label.font = R.Fonts.helveticaRegular(with: 15)
 
 //        iconView.translatesAutoresizingMaskIntoConstraints = false
-        iconView.image = Resources.Image.Common.downArrow?.withRenderingMode(.alwaysTemplate)
+        iconView.image = R.Image.Common.downArrow?.withRenderingMode(.alwaysTemplate)
         //withRenderingMode(.alwaysTemplate) с помощью RenderingMode мы можем изменять цвета ц
-        iconView.tintColor = Resources.Colors.TabBarColors.active
+        iconView.tintColor = R.Colors.TabBarColors.active
     }
 }

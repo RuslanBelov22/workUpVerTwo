@@ -16,15 +16,15 @@ final class WeekView: BaseView{
 }
 
 extension WeekView {
-    override func addViews() {
-        super.addViews()
+    override func setupViews() {
+        super.setupViews()
 
-        addView(stackView)
+        setupView(stackView)
 
 
     }
-    override func layoutViews() {
-        super.layoutViews()
+    override func constrainViews() {
+        super.constrainViews()
 
         NSLayoutConstraint.activate([
 
@@ -36,8 +36,8 @@ extension WeekView {
         ])
 
     }
-    override func configureVews() {
-        super.configureVews()
+    override func configureAppearance() {
+        super.configureAppearance()
 
         stackView.spacing = 7
         // distribution нужен для определение пропорциональности элементов

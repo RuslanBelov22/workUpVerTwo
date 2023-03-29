@@ -17,7 +17,7 @@ final class OverviewNavBar: BaseView {
     //это нужна для того что бы view загрузил frame и мы могли установить border
     override func layoutSubviews() {
         super.layoutSubviews()
-        addBottomBorder(with: Resources.Colors.NavBarColors.secondary, height: 1)
+        addBottomBorder(with: R.Colors.NavBarColors.secondary, height: 1)
     }
 
     func addAllWorkoutsAction(_ action: Selector, with target: Any?) {
@@ -31,17 +31,17 @@ final class OverviewNavBar: BaseView {
 }
 
 extension OverviewNavBar {
-    override func addViews() {
-        super.addViews()
+    override func setupViews() {
+        super.setupViews()
 
-        addView(titleLabel)
-        addView(allWorkoutsButton)
-        addView(addButton)
-        addView(weekView)
+        setupView(titleLabel)
+        setupView(allWorkoutsButton)
+        setupView(addButton)
+        setupView(weekView)
     }
 
-    override func layoutViews() {
-        super.layoutViews()
+    override func constrainViews() {
+        super.constrainViews()
 
         NSLayoutConstraint.activate([
             addButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -67,18 +67,18 @@ extension OverviewNavBar {
 
     }
 
-    override func configureVews() {
-        super.configureVews()
+    override func configureAppearance() {
+        super.configureAppearance()
         backgroundColor = .white
 
         //теперь везде можно убрать translatesAutoresizingMaskIntoConstraints так как эта функция есть а расширении UIview
 //        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = Resources.Strings.TabBarStrings.overview
-        titleLabel.textColor = Resources.Colors.NavBarColors.titleGray
-        titleLabel.font = Resources.Fonts.helveticaRegular(with: 22)
+        titleLabel.text = R.Strings.NavBar.overview
+        titleLabel.textColor = R.Colors.NavBarColors.titleGray
+        titleLabel.font = R.Fonts.helveticaRegular(with: 22)
 
 //        allWorkoutsButton.translatesAutoresizingMaskIntoConstraints = false
-        allWorkoutsButton.setTitle(Resources.Strings.OverView.allWorkoutsButton)
+        allWorkoutsButton.setTitle(R.Strings.OverView.allWorkoutsButton)
         //больше не нужно
 //        allWorkoutsButton.addTarget(self,
 //                                    action: #selector(allWorkoutsButtonAction),
@@ -86,7 +86,7 @@ extension OverviewNavBar {
 
 
 //        addButton.translatesAutoresizingMaskIntoConstraints = false
-        addButton.setImage(Resources.Image.Common.add, for: .normal)
+        addButton.setImage(R.Image.Common.add, for: .normal)
         
 //        не забывает!!! translatesAutoresizingMaskIntoConstraints
 //        weekView.translatesAutoresizingMaskIntoConstraints = false

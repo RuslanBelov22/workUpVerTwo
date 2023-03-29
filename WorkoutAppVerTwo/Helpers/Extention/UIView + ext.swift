@@ -43,7 +43,7 @@ extension UIView { //добавление сепаратора во вью
         UIView.animate(withDuration: 0.15) {self.alpha = 1}
     }
     //функция для автоматической расстановки view
-    func addView(_ view: UIView) {
+    func setupView(_ view: UIView) {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
     }

@@ -17,17 +17,17 @@ class BaseController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addViews()
-        layoutViews()
-        configure()
+        setupViews()
+        constrainViews()
+        configureAppearance()
     }
 }
 
 @objc extension BaseController { //@objc позволяет переопределять в дочерних классах
-    func addViews() {}
-    func layoutViews() {}
-    func configure() {
-        view.backgroundColor = Resources.Colors.BaseController.baseBackgroundColor
+    func setupViews() {}
+    func constrainViews() {}
+    func configureAppearance() {
+        view.backgroundColor = R.Colors.BaseController.baseBackgroundColor
     }
     func navBarLeftButtonHandler() {
         print("NavBarLeft buttom tapped")
@@ -43,11 +43,11 @@ extension BaseController {
     func addNavBarButton(at position: NavBarPosition, with title: String) {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
-        button.setTitleColor(Resources.Colors.BaseController.navBarButtonColorActiv,
+        button.setTitleColor(R.Colors.BaseController.navBarButtonColorActiv,
                              for: .normal)
-        button.setTitleColor(Resources.Colors.BaseController.navBarButtonColorInactive,
+        button.setTitleColor(R.Colors.BaseController.navBarButtonColorInactive,
                              for: .normal)
-        button.titleLabel?.font = Resources.Fonts.helveticaRegular(with: 17)
+        button.titleLabel?.font = R.Fonts.helveticaRegular(with: 17)
 
         switch position {
         case .left:

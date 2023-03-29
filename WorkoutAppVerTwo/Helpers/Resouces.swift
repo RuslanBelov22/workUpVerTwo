@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Resources {
+enum R {
     enum Colors {
         enum TabBarColors {
             //через static мы можем обратиться к элементу не создавая экземпляр класса
@@ -28,12 +28,25 @@ enum Resources {
     }
     
     enum Strings {
-        enum TabBarStrings {
-            static var overview = "Overview"
-            static var session = "Session"
-            static var progress = "Progress"
-            static var settings = "Settings"
+        enum TabBar {
+            static func title(for tab: Tabs) -> String {
+                switch tab {
+                case .overview: return "Overview"
+                case .session: return "Session"
+                case .progress: return "Progress"
+                case .settings: return "Settings"
+                }
+            }
         }
+
+        enum NavBar {
+            static let overview = "Today"
+            static let session = "High Intensity Cardio"
+            static let progress = "Workout Progress"
+            static let settings = "Settings"
+        }
+
+
         enum Session {
             static var navBarLeft = "Pause"
             static var navBarRight = "Finish"
@@ -58,10 +71,18 @@ enum Resources {
 
     enum Image {
         enum TabBarImage {
-            static var overview = UIImage(named: "Overview_tab")
-            static var session = UIImage(named: "Session_tab")
-            static var progress = UIImage(named: "Progress_tab")
-            static var settings = UIImage(named: "Settings_tab")
+            static func icon(for tab: Tabs) -> UIImage? {
+                switch tab {
+                case .overview: return UIImage(named: "Overview_tab")
+                case .session: return UIImage(named: "Session_tab")
+                case .progress: return UIImage(named: "Progress_tab")
+                case .settings: return UIImage(named: "Settings_tab")
+                }
+            }
+//            static var overview = UIImage(named: "Overview_tab")
+//            static var session = UIImage(named: "Session_tab")
+//            static var progress = UIImage(named: "Progress_tab")
+//            static var settings = UIImage(named: "Settings_tab")
         }
         enum Common {
             static var downArrow = UIImage(named: "down_arrow")

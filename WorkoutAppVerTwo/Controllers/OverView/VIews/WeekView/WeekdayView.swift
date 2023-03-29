@@ -23,31 +23,31 @@ extension WeekView {
 
             let isToday = currentDay.stripTime() == Date().stripTime()
 
-            backgroundColor = isToday ? Resources.Colors.BaseController.navBarButtonColorActiv : Resources.Colors.BaseController.baseBackgroundColor
+            backgroundColor = isToday ? R.Colors.BaseController.navBarButtonColorActiv : R.Colors.BaseController.baseBackgroundColor
 
             nameLabel.text = name.uppercased()
-            nameLabel.textColor = isToday ? .white : Resources.Colors.BaseController.navBarButtonColorInactive
+            nameLabel.textColor = isToday ? .white : R.Colors.BaseController.navBarButtonColorInactive
 
             dateLabel.text = "\(day)"
-            dateLabel.textColor = isToday ? .white : Resources.Colors.BaseController.navBarButtonColorInactive
+            dateLabel.textColor = isToday ? .white : R.Colors.BaseController.navBarButtonColorInactive
         }
 
     }
 }
 
 extension WeekView.WeekdayView {
-    override func addViews() {
-        super.addViews()
+    override func setupViews() {
+        super.setupViews()
 
-        addView(stackView)
+        setupView(stackView)
 
         stackView.addArrangedSubview(nameLabel)
         stackView.addArrangedSubview(dateLabel)
 
 
     }
-    override func layoutViews() {
-        super.layoutViews()
+    override func constrainViews() {
+        super.constrainViews()
 
         NSLayoutConstraint.activate([
 
@@ -57,17 +57,17 @@ extension WeekView.WeekdayView {
         ])
 
     }
-    override func configureVews() {
-        super.configureVews()
+    override func configureAppearance() {
+        super.configureAppearance()
 
 
         layer.cornerRadius = 5
         layer.masksToBounds = true
 
-        nameLabel.font = Resources.Fonts.helveticaRegular(with: 9)
+        nameLabel.font = R.Fonts.helveticaRegular(with: 9)
         nameLabel.textAlignment = .center
 
-        dateLabel.font = Resources.Fonts.helveticaRegular(with: 15)
+        dateLabel.font = R.Fonts.helveticaRegular(with: 15)
         dateLabel.textAlignment = .center
 
         stackView.spacing = 3
