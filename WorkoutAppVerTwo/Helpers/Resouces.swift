@@ -11,19 +11,20 @@ enum R {
     enum Colors {
         enum TabBarColors {
             //через static мы можем обратиться к элементу не создавая экземпляр класса
-            static var active = UIColor(hexString: "#437BFE")
-            static var inactive = UIColor(hexString: "#929DA5")
-            static var separator = UIColor(hexString: "#E8ECEF")
+            static let active = UIColor(hexString: "#437BFE")
+            static let inactive = UIColor(hexString: "#929DA5")
+            static let separator = UIColor(hexString: "#E8ECEF")
+            //если мы пишем через var то можем использовать вычисляемое св-во которое не инициализируется до того как ты к нему обратишься 
         }
         enum NavBarColors {
-            static var titleGray = UIColor(hexString: "#545C77")
-            static var separatorNav = UIColor(hexString: "#E8ECEF")
-            static var secondary = UIColor(hexString: "#F0F3FF")
+            static let titleGray = UIColor(hexString: "#545C77")
+            static let separatorNav = UIColor(hexString: "#E8ECEF")
+            static let secondary = UIColor(hexString: "#F0F3FF")
         }
         enum BaseController {
-            static var baseBackgroundColor = UIColor(hexString: "#F8F9F9")
-            static var navBarButtonColorActiv = UIColor(hexString: "#437BFE")
-            static var navBarButtonColorInactive = UIColor(hexString: "#929DA5")
+            static let baseBackgroundColor = UIColor(hexString: "#F8F9F9")
+            static let navBarButtonColorActiv = UIColor(hexString: "#437BFE")
+            static let navBarButtonColorInactive = UIColor(hexString: "#929DA5")
         }
     }
     
