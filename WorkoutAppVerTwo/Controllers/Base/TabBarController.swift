@@ -20,6 +20,7 @@ final class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         configure()
+        swithTo(tab: .session) //функция запускает тот экран который нужен в данный момент
     }
 
     required init?(coder: NSCoder) {
@@ -30,6 +31,9 @@ final class TabBarController: UITabBarController {
 //        configure()
 //    }
 
+    func swithTo(tab: Tabs) { //функция запускает тот экран который нужен в данный момент
+        selectedIndex = tab.rawValue
+    }
 
     private func configure() { //внешние настройки tabBar
         //MARK: Установка цвета активных/нет иконок и самого tabBar
