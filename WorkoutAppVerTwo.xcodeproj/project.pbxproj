@@ -21,7 +21,7 @@
 		4451F48429ABC0C500C189F3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F48329ABC0C500C189F3 /* UIColor + ext.swift */; };
 		4451F48829ACFD1000C189F3 /* Resouces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F48729ACFD1000C189F3 /* Resouces.swift */; };
 		4451F48A29B0F99600C189F3 /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F48929B0F99600C189F3 /* NavBarController.swift */; };
-		4451F48D29B1277000C189F3 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F48C29B1277000C189F3 /* BaseController.swift */; };
+		4451F48D29B1277000C189F3 /* WABaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F48C29B1277000C189F3 /* WABaseController.swift */; };
 		4451F48F29B1367800C189F3 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F48E29B1367800C189F3 /* UIView + ext.swift */; };
 		4451F49629B261F100C189F3 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F49529B261F100C189F3 /* SessionController.swift */; };
 		4451F49829B2622D00C189F3 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451F49729B2622D00C189F3 /* ProgressController.swift */; };
@@ -49,7 +49,7 @@
 		4451F48329ABC0C500C189F3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		4451F48729ACFD1000C189F3 /* Resouces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resouces.swift; sourceTree = "<group>"; };
 		4451F48929B0F99600C189F3 /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
-		4451F48C29B1277000C189F3 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		4451F48C29B1277000C189F3 /* WABaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WABaseController.swift; sourceTree = "<group>"; };
 		4451F48E29B1367800C189F3 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		4451F49529B261F100C189F3 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 		4451F49729B2622D00C189F3 /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 				44BA1A0229BCC18800021B2C /* WAButton.swift */,
 				4451F48029A9394F00C189F3 /* TabBarController.swift */,
 				4451F48929B0F99600C189F3 /* NavBarController.swift */,
-				4451F48C29B1277000C189F3 /* BaseController.swift */,
+				4451F48C29B1277000C189F3 /* WABaseController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 				4451F48829ACFD1000C189F3 /* Resouces.swift in Sources */,
 				4451F46C29A90A4800C189F3 /* SceneDelegate.swift in Sources */,
 				4451F49A29B2626C00C189F3 /* SettingsController.swift in Sources */,
-				4451F48D29B1277000C189F3 /* BaseController.swift in Sources */,
+				4451F48D29B1277000C189F3 /* WABaseController.swift in Sources */,
 				44BA1A0729C1F57200021B2C /* BaseView.swift in Sources */,
 				4451F49629B261F100C189F3 /* SessionController.swift in Sources */,
 				4451F48429ABC0C500C189F3 /* UIColor + ext.swift in Sources */,

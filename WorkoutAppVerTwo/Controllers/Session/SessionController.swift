@@ -7,13 +7,35 @@
 
 import UIKit
 
-class SessionViewController: BaseController {
+class SessionViewController: WABaseController {
 
-    private let timerView: TimerView = {
-        let view = TimerView()
-        return view
-    }()
+    private let timerView = TimerView()
+
+    private let timerDuration = 3.0
+
+    override func navBarLeftButtonHandler() {
+        if timerView.state == .isStopped {
+            timerView.startTimer()
+        } else {
+            timerView.pauseTimer()
+        }
+
+        timerView.state = timerView.state == .isRunning ? .isStopped : .isRunning
+        setNavBarButton(timerView.state == .isRunning
+                        ? R.Strings.Session.navBarLeftPause
+                        : R.Strings.Session.navBarLeftStart,
+                        at: .left)
+
+    }
+    override func navBarRightButtonHandler() {
+        timerView.stopTimer()
+        timerView.state = .isStopped
+
+        setNavBarButton(R.Strings.Session.navBarLeftStart, at: .left)
+        
+    }
 }
+
 
 extension SessionViewController {
     override func setupViews() {
@@ -39,7 +61,9 @@ extension SessionViewController {
         navigationController?.tabBarItem.title = R.Strings.TabBar.title(for: Tabs.session)
 
         //Добавляем кнопки на navBar
-        addNavBarButton(at: .left, with: R.Strings.Session.navBarLeft)
-        addNavBarButton(at: .right, with: R.Strings.Session.navBarRight)
+        addNavBarButton(at: .left, with: R.Strings.Session.navBarLeftStart)
+        addNavBarButton(at: .right, with: R.Strings.Session.navBarRightFinish)
+
+        timerView.configure(with: timerDuration, progress: 1.5)
     }
 }

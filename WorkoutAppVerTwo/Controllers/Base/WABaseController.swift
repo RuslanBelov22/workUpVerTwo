@@ -13,7 +13,7 @@ enum NavBarPosition {
 }
 
 //MARK: Создаем базовый контроллер для всех вью
-class BaseController: UIViewController {
+class WABaseController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +23,7 @@ class BaseController: UIViewController {
     }
 }
 
-@objc extension BaseController { //@objc позволяет переопределять в дочерних классах
+@objc extension WABaseController { //@objc позволяет переопределять в дочерних классах
     func setupViews() {}
     func constrainViews() {}
     func configureAppearance() {
@@ -39,7 +39,7 @@ class BaseController: UIViewController {
 
 
 
-extension BaseController {
+extension WABaseController {
     func addNavBarButton(at position: NavBarPosition, with title: String) {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
@@ -58,5 +58,14 @@ extension BaseController {
             navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
         }
 
+    }
+
+    func setNavBarButton(_ title: String, at position: NavBarPosition) {
+        switch position {
+        case .left:
+            (navigationItem.leftBarButtonItem?.customView as? UIButton)?.setTitle(title, for: .normal)
+        case .right:
+            (navigationItem.rightBarButtonItem?.customView as? UIButton)?.setTitle(title, for: .normal)
+        }
     }
 }

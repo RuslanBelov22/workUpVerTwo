@@ -95,7 +95,7 @@ final class TabBarController: UITabBarController {
 
     }
 
-    private func getController(for tab: Tabs) -> BaseController {
+    private func getController(for tab: Tabs) -> WABaseController {
         switch tab {
         case .overview: return OverViewController()
         case .session: return SessionViewController()
