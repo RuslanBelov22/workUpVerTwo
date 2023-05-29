@@ -27,7 +27,7 @@ final class TimerView: WABaseInfoView {
 
     private let elapsedTimeValueLabel: UILabel = {
         let label = UILabel()
-        label.text = "22:22"
+        label.text = "Remaining Time"
         label.font = R.Fonts.helveticaRegular(with: 46)
         label.textColor = R.Colors.NavBarColors.titleGray
         label.textAlignment = .center
@@ -45,7 +45,7 @@ final class TimerView: WABaseInfoView {
 
     private let remainingTimeValueLabel: UILabel = {
         let label = UILabel()
-        label.text = "22:22"
+//        label.text = "Remaining Time"
         label.font = R.Fonts.helveticaRegular(with: 13)
         label.textColor = R.Colors.NavBarColors.titleGray
         label.textAlignment = .center
@@ -78,6 +78,9 @@ final class TimerView: WABaseInfoView {
 
         let gotValuewDevider = duration == 0 ? 1 : duration
         let percent = tempCurrentValue / gotValuewDevider
+
+        elapsedTimeValueLabel.text = getDisplayedString(from: Int(tempCurrentValue))
+        remainingTimeValueLabel.text = getDisplayedString(from: Int(duration) - Int(tempCurrentValue))
 
         progressView.drawProgress(with: CGFloat(percent))
 
@@ -198,3 +201,18 @@ final class TimerView: WABaseInfoView {
         }
     }
 
+private extension TimerView {
+    func getDisplayedString (from value: Int) -> String { //функция для отображения сколько секунд прошло
+        let seconds = value % 60
+        let minutes = (value / 60) % 60
+        let hours = value / 3600
+
+        let secondsStr = seconds < 10 ? "0\(seconds)" : "\(seconds)"
+        let minutesStr = minutes < 10 ? "0\(minutes)" : "\(minutes)"
+        let hoursStr = hours < 10 ? "0\(hours)" : "\(hours)"
+
+        return hours == 0
+        ? [minutesStr, secondsStr].joined(separator: ":")
+        : [hoursStr, minutesStr, secondsStr].joined(separator: ":")
+    }
+}
