@@ -14,7 +14,7 @@ enum R {
             static let active = UIColor(hexString: "#437BFE")
             static let inactive = UIColor(hexString: "#929DA5")
             static let separator = UIColor(hexString: "#E8ECEF")
-            //если мы пишем через var то можем использовать вычисляемое св-во которое не инициализируется до того как ты к нему обратишься 
+            //если мы пишем через var то можем использовать вычисляемое св-во которое не инициализируется до того как ты к нему обратишься
         }
         enum NavBarColors {
             static let titleGray = UIColor(hexString: "#545C77")
@@ -26,6 +26,7 @@ enum R {
             static let navBarButtonColorActiv = UIColor(hexString: "#437BFE")
             static let navBarButtonColorInactive = UIColor(hexString: "#929DA5")
         }
+        static  let subTitleGray = UIColor(hexString: "#9BA4B0")
     }
     
     enum Strings {
@@ -55,6 +56,17 @@ enum R {
 
             static let elapsedTime = "Elapsed Time"
             static let remainingTime = "Remaining Time"
+
+            static let completed = "Completed"
+            static let remaining = "Remaining"
+
+            static let workoutStats = "Workout Stats"
+            static let heartRate = "Heart Rate"
+            static let averagePace = "Average Pace"
+            static let totalSteps = "Total Steps"
+            static let totalDistance = "Total Distance"
+
+            static let stepsCounter = "Steps Counter"
         }
         enum Progress {
             static var navBarLeft = "Export"
@@ -68,11 +80,11 @@ enum R {
     }
 
     enum Fonts {
-            //используем функцию что бы мы могли задавать размер в другом месте
-            static func helveticaRegular (with size: CGFloat) -> UIFont {
-                UIFont(name: "Helvetica", size: size) ?? UIFont()
-            }
+        //используем функцию что бы мы могли задавать размер в другом месте
+        static func helveticaRegular (with size: CGFloat) -> UIFont {
+            UIFont(name: "Helvetica", size: size) ?? UIFont()
         }
+    }
 
     enum Image {
         enum TabBarImage {
@@ -84,14 +96,22 @@ enum R {
                 case .settings: return UIImage(named: "Settings_tab")
                 }
             }
-//            static var overview = UIImage(named: "Overview_tab")
-//            static var session = UIImage(named: "Session_tab")
-//            static var progress = UIImage(named: "Progress_tab")
-//            static var settings = UIImage(named: "Settings_tab")
+            //            static var overview = UIImage(named: "Overview_tab")
+            //            static var session = UIImage(named: "Session_tab")
+            //            static var progress = UIImage(named: "Progress_tab")
+            //            static var settings = UIImage(named: "Settings_tab")
         }
         enum Common {
-            static var downArrow = UIImage(named: "down_arrow")
-            static var add = UIImage(named: "add_Button")
+            static let downArrow = UIImage(named: "down_arrow")
+            static let add = UIImage(named: "add_Button")
+        }
+        enum Session {
+            enum Stats {
+                static let averagePace = UIImage(named: "stats_averagePace")
+                static let heartRate = UIImage(named: "stats_heartRate")
+                static let totalDistance = UIImage(named: "stats_totalDistance")
+                static let totalSteps = UIImage(named: "stats_totalSteps")
+            }
         }
     }
 }

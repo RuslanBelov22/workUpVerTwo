@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WABaseInfoView: BaseView {
+class WABaseInfoView: WABaseView {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -20,7 +20,7 @@ class WABaseInfoView: BaseView {
         view.backgroundColor = .white
         view.layer.borderColor = R.Colors.NavBarColors.separatorNav.cgColor //ставишь в конце .cgColor когда требует этот тип данных
         view.layer.borderWidth = 1
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = 20
         return view
     }()
 

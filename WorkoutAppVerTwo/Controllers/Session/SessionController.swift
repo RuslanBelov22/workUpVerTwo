@@ -10,8 +10,11 @@ import UIKit
 class SessionViewController: WABaseController {
 
     private let timerView = TimerView()
+    private let statsView = StatsView(with: R.Strings.Session.workoutStats)
+    private let stepsView = WABaseInfoView(with: R.Strings.Session.stepsCounter)
 
-    private let timerDuration = 3619.0
+
+    private let timerDuration = 10.0
 
     override func navBarLeftButtonHandler() {
         if timerView.state == .isStopped {
@@ -19,7 +22,7 @@ class SessionViewController: WABaseController {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) { //задержка перед выполнением
                         self.navBarRightButtonHandler()
                     }
-                print(progress)
+//                print(progress)
             }
             }
             else {
@@ -47,6 +50,9 @@ extension SessionViewController {
     override func setupViews() {
         super.setupViews()
         view.setupView(timerView)
+        view.setupView(statsView)
+        view.setupView(stepsView)
+        
     }
     override func constrainViews() {
         super.constrainViews()
@@ -55,6 +61,16 @@ extension SessionViewController {
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 15),
             timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+
+            statsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            statsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 10),
+            statsView.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -7.5),
+            statsView.heightAnchor.constraint(equalToConstant: 200),
+
+            stepsView.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 7.5),
+            stepsView.topAnchor.constraint(equalTo: statsView.topAnchor),
+            stepsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            stepsView.heightAnchor.constraint(equalTo: statsView.heightAnchor),
 
         ])
 
