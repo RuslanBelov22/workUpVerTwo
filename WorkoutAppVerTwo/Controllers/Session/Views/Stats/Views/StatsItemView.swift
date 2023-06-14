@@ -7,9 +7,38 @@
 
 import UIKit
 
+
+enum StatsItem {
+    case averagePace(value: String)
+    case heartRate(value: String)
+    case totalDistance(value: String)
+    case totalSteps(value: String)
+
+    var data: StatsItemView.ItemData {
+        switch self {
+        case .averagePace(let value):
+            return .init(image: R.Image.Session.Stats.averagePace,//тут вызывается инициализатор так как у структур есть втроенный init
+                         value: value + "/km",
+                         title: R.Strings.Session.averagePace)
+        case .heartRate(let value):
+            return .init(image: R.Image.Session.Stats.heartRate,
+                         value: value + "bpm",
+                         title: R.Strings.Session.heartRate)
+        case .totalDistance(let value):
+            return .init(image: R.Image.Session.Stats.totalDistance,
+                         value: value + "km",
+                         title: R.Strings.Session.totalDistance)
+        case .totalSteps(let value):
+            return .init(image: R.Image.Session.Stats.totalSteps,
+                         value: value,
+                         title: R.Strings.Session.totalSteps)
+        }
+    }
+}
+
 final class StatsItemView: WABaseView {
 
-    struct StatsItem {
+    struct ItemData {
         let image: UIImage?
         let value: String
         let title: String
@@ -39,9 +68,9 @@ final class StatsItemView: WABaseView {
     }()
 
     func configure(with item: StatsItem) {
-        imageView.image = item.image
-        valueLabel.text = item.value
-        titleLabel.text = item.title
+        imageView.image = item.data.image
+        valueLabel.text = item.data.value
+        titleLabel.text = item.data.title.uppercased()
     }
     
 }
@@ -61,7 +90,8 @@ extension StatsItemView {
         NSLayoutConstraint.activate([
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 42),
+            imageView.widthAnchor.constraint(equalToConstant: 32),
+            imageView.heightAnchor.constraint(equalToConstant: 32),
 
 
             stackView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 15),

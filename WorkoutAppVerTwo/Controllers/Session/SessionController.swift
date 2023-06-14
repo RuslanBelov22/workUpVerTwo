@@ -14,7 +14,7 @@ class SessionViewController: WABaseController {
     private let stepsView = WABaseInfoView(with: R.Strings.Session.stepsCounter)
 
 
-    private let timerDuration = 10.0
+    private let timerDuration = 3.0
 
     override func navBarLeftButtonHandler() {
         if timerView.state == .isStopped {
@@ -43,6 +43,7 @@ class SessionViewController: WABaseController {
             setNavBarButton(R.Strings.Session.navBarLeftStart, at: .left)
 
         }
+
     }
 
 
@@ -52,6 +53,7 @@ extension SessionViewController {
         view.setupView(timerView)
         view.setupView(statsView)
         view.setupView(stepsView)
+        
         
     }
     override func constrainViews() {
@@ -65,8 +67,6 @@ extension SessionViewController {
             statsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             statsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 10),
             statsView.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -7.5),
-            statsView.heightAnchor.constraint(equalToConstant: 200),
-
             stepsView.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 7.5),
             stepsView.topAnchor.constraint(equalTo: statsView.topAnchor),
             stepsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
@@ -88,9 +88,16 @@ extension SessionViewController {
 
         timerView.configure(with: timerDuration, progress: 1.5)
 
-//        timerView.callBack = { [weak self] in
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { //задержка перед выполнением
-//                self?.navBarRightButtonHandler()
-//            }
+        timerView.callBack = { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) { //задержка перед выполнением
+                self?.navBarRightButtonHandler()
+            }
         }
+
+        statsView.configure(with: [.heartRate(value: "155"),
+                                   .averagePace(value: "08:20"),
+                                   .totalSteps(value: "7.682"),
+                                   .totalDistance(value: "8.25")
+                                  ])
     }
+}

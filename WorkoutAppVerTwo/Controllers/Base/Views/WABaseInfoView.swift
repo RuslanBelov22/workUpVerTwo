@@ -15,7 +15,8 @@ class WABaseInfoView: WABaseView {
         label.textColor = R.Colors.BaseController.navBarButtonColorInactive
         return label
     }()
-    private let contentView: UIView = {
+
+    let contentView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.borderColor = R.Colors.NavBarColors.separatorNav.cgColor //ставишь в конце .cgColor когда требует этот тип данных
