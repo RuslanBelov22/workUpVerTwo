@@ -71,7 +71,6 @@ extension SessionViewController {
             stepsView.topAnchor.constraint(equalTo: statsView.topAnchor),
             stepsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             stepsView.heightAnchor.constraint(equalTo: statsView.heightAnchor),
-
         ])
 
     }

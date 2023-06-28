@@ -20,7 +20,7 @@ final class TabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         configure()
-        swithTo(tab: .session) //функция запускает тот экран который нужен в данный момент
+        swithTo(tab: .progress) //функция запускает тот экран который нужен в данный момент
     }
 
     required init?(coder: NSCoder) {

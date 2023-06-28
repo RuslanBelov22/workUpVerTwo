@@ -37,6 +37,7 @@
 		44BA1A0329BCC18800021B2C /* WAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA1A0229BCC18800021B2C /* WAButton.swift */; };
 		44BA1A0529C0E78600021B2C /* OverviewNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA1A0429C0E78600021B2C /* OverviewNavBar.swift */; };
 		44BA1A0729C1F57200021B2C /* WABaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BA1A0629C1F57200021B2C /* WABaseView.swift */; };
+		44EEFA522A4C2C0200AE2540 /* DailyPerfomanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EEFA512A4C2C0200AE2540 /* DailyPerfomanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		44BA1A0229BCC18800021B2C /* WAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAButton.swift; sourceTree = "<group>"; };
 		44BA1A0429C0E78600021B2C /* OverviewNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewNavBar.swift; sourceTree = "<group>"; };
 		44BA1A0629C1F57200021B2C /* WABaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WABaseView.swift; sourceTree = "<group>"; };
+		44EEFA512A4C2C0200AE2540 /* DailyPerfomanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPerfomanceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 		4451F49329B261B100C189F3 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				44EEFA4F2A4C2A0E00AE2540 /* Views */,
 				4451F49729B2622D00C189F3 /* ProgressController.swift */,
 			);
 			path = Progress;
@@ -297,6 +300,22 @@
 				44BA1A0429C0E78600021B2C /* OverviewNavBar.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		44EEFA4F2A4C2A0E00AE2540 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44EEFA502A4C2A2900AE2540 /* Perfomance */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44EEFA502A4C2A2900AE2540 /* Perfomance */ = {
+			isa = PBXGroup;
+			children = (
+				44EEFA512A4C2C0200AE2540 /* DailyPerfomanceView.swift */,
+			);
+			path = Perfomance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +407,7 @@
 				444C130C29E71DC800F0C994 /* ProgressView.swift in Sources */,
 				4451F49829B2622D00C189F3 /* ProgressController.swift in Sources */,
 				44BA1A0329BCC18800021B2C /* WAButton.swift in Sources */,
+				44EEFA522A4C2C0200AE2540 /* DailyPerfomanceView.swift in Sources */,
 				441A32B52A27792F006449AA /* StatsItemView.swift in Sources */,
 				4451F48829ACFD1000C189F3 /* Resouces.swift in Sources */,
 				4451F46C29A90A4800C189F3 /* SceneDelegate.swift in Sources */,

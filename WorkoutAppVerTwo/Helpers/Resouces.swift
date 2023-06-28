@@ -69,12 +69,15 @@ enum R {
             static let stepsCounter = "Steps Counter"
         }
         enum Progress {
-            static var navBarLeft = "Export"
-            static var navBarRight = "Details"
+            static let navBarLeft = "Export"
+            static let navBarRight = "Details"
+
+            static let dailyPerfomanse = "Daily perfomance"
+            static let last7Days = "Last 7 days"
         }
 
         enum OverView {
-            static var allWorkoutsButton = "All Workouts"
+            static let allWorkoutsButton = "All Workouts"
         }
 
     }

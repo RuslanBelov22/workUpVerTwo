@@ -40,7 +40,7 @@ class WABaseInfoView: WABaseView {
         titleLabel.text = title?.uppercased()//делает надписи жирными
         titleLabel.textAlignment = buttonTitle == nil ? .center : .left
 
-        button.setTitle(buttonTitle)
+        button.setTitle(buttonTitle?.uppercased())
         button.isHidden = buttonTitle == nil ? true : false
  
         super.init(frame: .zero)

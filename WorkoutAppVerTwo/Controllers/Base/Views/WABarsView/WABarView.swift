@@ -9,7 +9,7 @@ import UIKit
 
 extension WABarView {
     struct Data {
-        let  value: String
+        let value: String
         let heightMultiplier: Double
         let title: String
 
@@ -46,7 +46,7 @@ final class WABarView: WABaseView {
         super.init(frame: .zero)
 
         valueLabel.text = data.value
-        titleLabel.text = data.title
+        titleLabel.text = data.title.uppercased()
 
 
     }
@@ -71,15 +71,17 @@ extension WABarView {
 
         NSLayoutConstraint.activate([
             valueLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            valueLabel.heightAnchor.constraint(equalToConstant: 10),
 
-            barView.topAnchor.constraint(equalTo: valueLabel.bottomAnchor,constant: 5),
+            barView.topAnchor.constraint(equalTo: valueLabel.bottomAnchor,constant: 7),
             barView.centerXAnchor.constraint(equalTo: centerXAnchor),
             barView.widthAnchor.constraint(equalToConstant: 17),
-            barView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: heightMultiplier, constant: -40),
+            barView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: heightMultiplier * 0.8),
 
             titleLabel.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: 10),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            titleLabel.heightAnchor.constraint(equalToConstant: 10),
         ])
     
     }
